@@ -18,7 +18,7 @@ $form.submit(function(event) {
   event.preventDefault();
 
   //getting values of content from form data
-  var twoteContent = $form.find("[name='twoteContent']").val();
+  var twoteContent = $("#twoteContent").val()
 
   //sending post request
   $.post("twotes/add", {

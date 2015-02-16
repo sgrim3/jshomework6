@@ -31,6 +31,7 @@ twotes.list = function(req, res) {
 //adding an ingredient to list
 twotes.add = function (req, res) {
 	var content = req.body.twoteContent;
+	console.log(content)
 
 	var twoteObj = new Twote({
 		username: "username",

@@ -24,7 +24,7 @@ users.list = function(req, res) {
 users.add = function (req, res) {
 	var username = req.body.username;
 	
-	var userObj = new Twote({
+	var userObj = new User({
 		username: username
 	});
 

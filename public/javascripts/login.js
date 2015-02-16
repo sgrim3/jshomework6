@@ -16,7 +16,7 @@ $form.submit(function(event) {
   event.preventDefault();
 
   //getting the value of username from form
-  var username = $form.find("[name='username']").val();
+  var username = $('#username').val();
 
   //sending post request to add order to database
   $.post("users/add",{

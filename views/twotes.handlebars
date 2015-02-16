@@ -1,6 +1,6 @@
 <div id="editForm">
 <form id="twote-form" action="#">
-	<label for="twoteContent">Twote</label>
+	<label for="twoteContent">New Twote</label>
     <input id="twoteContent" name="twoteContent" type="text" class="required">
     <input type="submit" id="submit" value="Submit" />
 
@@ -9,7 +9,6 @@
 <div id="twote-list">
     {{> twote-list}}
 </div>
-{{!-- BUGGGGG right now the users aren't populating the user-list below. Also, adding a user adds an empty twote, which is weird. I'm not sure if the username is added to the database. USers.add doesn't really render anything at this point, which might be screwing things up. The twotes html is rendered in the onSuccess of the users.js form submit. This is the worst of all places to put a comment. Oh well.  --}}
 WORDS TO SEPERATE LISTS
 <div id = 'user-list'>
 	{{>user-list}}
