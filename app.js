@@ -11,9 +11,8 @@ var mongoose = require("mongoose");
 var app = express();
 
 //require my modules
-var index = require("./routes/index");
-var orders = require("./routes/orders");
-var ingredients = require("./routes/ingredients");
+var twotes = require("./routes/twotes");
+var users = require ("./routes/users");
 
 //setup
 var PORT = process.env.PORT || 3000;
@@ -32,20 +31,18 @@ app.use(express.static(path.join(__dirname, "public")));
 
 //routes!
 app.get('/', function(req, res){
-  res.send("Welcome to Jessica's Burgers");
+  res.send("Welcome to Twoter!");
 });
 
 //the three pages people can go to
-app.get('/ingredients', ingredients.list);
-app.get('/order', orders.orderForm);
-app.get('/kitchen', orders.show);
+app.get('/twotes', twotes.list);
+app.get('/login', users.login)	;
 
-//hidden ones for AJAX
-app.post("/ingredients/add", ingredients.add);
-app.post("/order/add", orders.add);
-app.post("/kitchen/delete", orders.remove);
-app.post("/ingredients/edit", ingredients.edit);
-app.post("/ingredients/outOfStock", ingredients.outOfStock);
+
+//hidden ones for AJAX and forms and stuff
+app.post("/twotes/add", twotes.add);
+app.post("/twotes/delete", twotes.remove);
+app.post("/users/add", users.add)
 
 //connect to mongoose
 mongoose.connect(mongoURI);

@@ -1,19 +1,18 @@
 var mongoose = require("mongoose");
 var Schema = mongoose.Schema;
 
-var NameSchema = new Schema({
-	attribute1: String,
-	attribute2: Number,
-	attribute3Ref: [{ type: Schema.ObjectId, ref: 'Ingredient' }]
+var UserSchema = new Schema({
+	username: String,
+	twotes: [{ type: Schema.ObjectId, ref: 'User' }]
 });
 
-var Name2Schema = new Schema({
-    _creator : { type: Schema.ObjectId, ref: 'Order' },
-    attribute4: String,
-	attribute5: Number,
-	attribute6: Boolean
+var TwoteSchema = new Schema({
+    // username : { type: Schema.ObjectId, ref: 'Twote' },
+    username: String,
+	content: String,
+	time : { type : Date, default: Date.now }
 });
 
 
-module.exports.order = mongoose.model("Name", NameSchema);
-module.exports.ingredient = mongoose.model("Name2", Name2Schema);
+module.exports.user = mongoose.model("User", UserSchema);
+module.exports.twote = mongoose.model("Twote", TwoteSchema);
