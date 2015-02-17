@@ -1,18 +1,30 @@
-<div id="editForm">
-<form id="twote-form" action="#">
-	<label for="twoteContent">New Twote</label>
-    <input id="twoteContent" name="twoteContent" type="text" class="required">
-    <input type="submit" id="submit" value="Submit" />
+<link href="stylesheets/styles.css" rel="stylesheet" type="text/css">
 
-</form>
+<link href='http://fonts.googleapis.com/css?family=Lato:400,700' rel='stylesheet' type='text/css'>
+
+
+<div id="twotesPage-header">
+	<h1 id="Twoter-header">Twoter</h1>
+	<input type="button" id="logout" value="Logout" /> 
 </div>
+
+<div class="new-twote">
+	<form id="twote-form" action="#">
+		<label for="twoteContent">New Twote:</label>
+	    <input id="twoteContent" name="twoteContent" type="text" class="required">
+	    <input type="submit" id="submit" value="Submit" />
+
+	</form>
+	<p id="current-user"> -{{currentUser}}</p>
+</div>
+
+
 <div id="twote-list">
     {{> twote-list}}
 </div>
-WORDS TO SEPERATE LISTS
+
 <div id = 'user-list'>
 	{{>user-list}}
 </div>
-<div>
-	<input type="button" id="logout" value="Logout" /> 
-</div>
+
+ 

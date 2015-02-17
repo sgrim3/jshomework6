@@ -23,6 +23,7 @@ users.list = function(req, res) {
 //adding an ingredient to list
 users.add = function (req, res) {
 	var username = req.body.username;
+	req.session.username=username;
 	
 	var userObj = new User({
 		username: username
@@ -54,5 +55,35 @@ users.login = function (req, res) {
 	res.render ("login")
 };
 
+users.logout = function (req, res) {
+	if (req.session){
+		console.log (req.session.username);
+		req.session = null
+	}
+	res.send("redirect to login page");
+}
+
+
+
+
+// users.highlight=function(req, res) {
+// 	var ID = req.body.ID;
+
+// 	Twote.find({'username': ID}).exec(function (err, twotes) {
+// 		if (err) {
+// 			return console.log ("Something broke");
+// 		}
+// 		else {
+// 			var twotesIDs =[];
+// 			for (var i=0;i<twotes.length;i++) {
+// 				twotesIDs[i] = twotes[i]._id;
+// 			}
+// 			res.send(twotesIDs);
+// 		}
+// 	})
+// }
+
 
 module.exports = users;
+
+

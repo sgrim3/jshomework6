@@ -1,0 +1,204 @@
+body {
+	background: #79CDCD;
+	font-family: 'Lato', sans-serif;
+	text-align: center;
+}
+
+h1 {
+	font-size: 35px;
+	text-transform: uppercase;
+	letter-spacing: 5px
+}
+
+.description {
+  font-size: 14px;
+  letter-spacing: 1px;
+  line-height: 1.3em;
+  margin: -2px 0 45px;
+}
+
+
+.input {
+  display: flex;
+  align-items: center;
+}
+
+
+.submit {
+  height: 44px;
+  border: none;
+}
+
+  
+#login-form {
+  width: 449px;
+  background: #FDFCFB;
+  font-family: inherit;
+  color: #303030;
+  letter-spacing: 1px;
+  text-indent: 5%;
+  border-radius: 5px;
+  margin: auto;
+}
+
+
+#submit {
+  width: 60px;
+  height: 46px;
+  background: #E86C8D;
+  font-family: inherit;
+  font-weight: bold;
+  color: inherit;
+  letter-spacing: 1px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background .3s ease-in-out;
+}
+  
+
+#submit:hover {
+  background: #d45d7d;
+}
+  
+
+input:focus {
+  outline: none;
+  outline: 2px solid #E86C8D;
+  box-shadow: 0 0 2px #E86C8D;
+}
+
+.new-twote {
+	width: 353px;
+  	background: #FDFCFB;
+  	font-family: inherit;
+  	color: #303030;
+  	letter-spacing: 1px;
+  	text-indent: 5%;
+  	border-radius: 5px;
+  	margin: auto;
+  	margin-bottom: 10px;
+  	margin-top: 10px;
+  	height: auto;
+  	display: block;
+  	padding: 20px;
+}
+
+.one-twote {
+  	background: #FDFCFB;
+  	font-family: inherit;
+  	color: #303030;
+  	letter-spacing: 1px;
+  	text-indent: 5%;
+  	border-radius: 5px;
+  	margin: auto;
+  	margin-bottom: 10px;
+  	margin-top: 10px;
+  	height: auto;
+  	display: block;
+  	padding: 20px;
+
+
+}
+.partial-user-list {
+	display: inline-block;
+	float: left;
+	padding-left: 0px;
+}
+
+.one-user {
+	list-style-type: none;
+}
+
+.username-button{
+  	background: #FDFCFB;
+  	font-family: inherit;
+  	color: #303030;
+  	letter-spacing: 1px;
+  	text-indent: 5%;
+  	border-radius: 5px;
+  	margin: auto;
+  	margin-bottom: 10px;
+  	margin-top: 10px;
+  	height: auto;
+  	display: block;
+  	padding: 20px;
+  	width: 200px;
+}
+.username-button:hover {
+	background-color: #F2F2F2;
+}
+
+#current-user {
+	text-align: right;
+}
+
+#twotesPage-header {
+	text-align: left;
+}
+
+#Twoter-header {
+	display: inline-block;
+}
+
+#logout {
+	width: 60px;
+  	height: 46px;
+  	background: #E86C8D;
+  	font-family: inherit;
+  	font-weight: bold;
+  	color: inherit;
+  	letter-spacing: 1px;
+  	border-radius: 5px;
+  	cursor: pointer;
+  	display:inline-block;
+  	float: right;
+
+  }
+
+#logout:hover {
+  background: #d45d7d;
+}
+
+#partial-twote-list {
+	display: inline-block;
+	float: left;
+	width: 65%;
+	padding-left: 0px;
+}
+
+#user-list{
+	display: inline-block;
+	float: right;
+	width: 20%
+}
+
+.delete {
+	width: 60px;
+  	height: 46px;
+  	background: #E86C8D;
+  	font-family: inherit;
+  	font-weight: bold;
+  	color: inherit;
+  	letter-spacing: 1px;
+  	cursor: pointer;
+  	display:inline-block;
+  	float: left;
+  	vertical-align: text-top;
+
+}
+
+#usernameTwote {
+	background: #FDFCFB;
+  	font-family: inherit;
+  	color: #303030;
+  	letter-spacing: 1px;
+  	text-indent: 5%;
+  	display: block;
+  	float: right;
+  	width: auto;
+}
+
+.highlight {
+	background-color: #ADD8E6;
+	font-weight: bold;
+}

@@ -1,7 +1,16 @@
-<ul> {{#each twotes}}
+<link href="stylesheets/styles.css" rel="stylesheet" type="text/css">
+
+<link href='http://fonts.googleapis.com/css?family=Lato:400,700' rel='stylesheet' type='text/css'>
+
+<ul id="partial-twote-list"> {{#each twotes}}
         <li>
-            {{@key}}{{content}}:  {{username}} 
-            <input type="button" class = "delete" id="{{_id}}" value="X" /> 
+            <div class = "one-twote" >
+            	<div id="twote-content" class= "{{username._id}}">{{@key}}{{content}}</div>
+	            <div id="usernameTwote" class= "{{username._id}}"> -{{username.username}} </div>
+	            {{#unless notDeletable}}
+	            <input type="button" class = "delete" id="{{_id}}" value="X" /> 
+	            {{/unless}}
+	        </div>
         </li>     
     {{/each}}
 </ul>
