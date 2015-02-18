@@ -31,7 +31,7 @@ var onSuccessForm = function (data, status) {
   }
   else{
     alert("You're not logged in! Oh noes! No worries, I'll redirect you.")
-    window.location.href='/'
+    window.location.href='/login'
   }
 };
 

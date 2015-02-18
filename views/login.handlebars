@@ -1,6 +1,8 @@
-<link href="stylesheets/styles.css" rel="stylesheet" type="text/css">
-
-<link href='http://fonts.googleapis.com/css?family=Lato:400,700' rel='stylesheet' type='text/css'>
+<script>
+function redirectToTwotes(req,res){
+	res.redirect("/twotes");
+}
+</script>
 
 <h1>Welcome to Twoter! :D</h1>
 
@@ -9,7 +11,7 @@
 </div>
 
 <div class="input">
-	<form id="login-form" action="#">
+	<form id="login-form" onsubmit="return redirectToTwotes()"method = "POST" action="users/add">
 		<label for="username">Username</label>
 	    <input id="username" type="text">
 

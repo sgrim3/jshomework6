@@ -22,8 +22,11 @@ users.list = function(req, res) {
 
 //adding an ingredient to list
 users.add = function (req, res) {
-	var username = req.body.username;
-	req.session.username=username;
+	console.log(req.user)
+	var username = (JSON.stringify (req.user.displayName)).replace(/\"/g, "");
+	console.log("stringify displayName: "+username);
+	// var username = req.body.username;
+	// req.session.username=username;
 	
 	var userObj = new User({
 		username: username
@@ -35,20 +38,21 @@ users.add = function (req, res) {
     		console.log("Err: " + err);
     	}
     	else {
-    		User.find().exec(function (err, users) {
-    			if (err) {
-    				console.log("Err: " + err);
-    			}
-    			else {
-		    		res.render("partials/user-list", {
-		    			users: users, 
-		    			layout: false
-		    		});
-		    	}
-		    });
-    	}
+    		res.redirect("/")
+   //  		User.find().exec(function (err, users) {
+   //  			if (err) {
+   //  				console.log("Err: " + err);
+   //  			}
+   //  			else {
+
+			// 		// res.render("partials/user-list", {
+		 //   //  			users: users, 
+		 //   //  			layout: false
+		 //   //  		});
+   //  			}	
+			// })	
+	    }
     });
-	
 };
 
 users.login = function (req, res) {
@@ -56,11 +60,13 @@ users.login = function (req, res) {
 };
 
 users.logout = function (req, res) {
-	if (req.session){
-		console.log (req.session.username);
-		req.session = null
-	}
-	res.send("redirect to login page");
+	req.logout();
+
+	// if (req.session){
+	// 	console.log (req.session.username);
+	// 	req.session = null
+	// }
+	res.redirect('/');
 }
 
 

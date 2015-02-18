@@ -8,7 +8,9 @@ var twotes = {};
 
 //gets list of all twotes and sorts by timestamp
 twotes.list = function(req, res) {
-	var currentUser = req.session.username;
+	// var currentUser = req.session.username;
+	var currentUser = (JSON.stringify (req.user.displayName)).replace(/\"/g, "");
+	console.log(currentUser)
 
 	Twote.find().sort({"time": -1}).populate('username').exec(function (err, twotes) {
 		if (err) {
@@ -40,11 +42,12 @@ twotes.list = function(req, res) {
 	})
 };
 
-//adding an ingredient to list
+//adding a twote to list
 twotes.add = function (req, res) {
-	var currentUser = req.session.username;
+	// var currentUser = req.session.username;
+	var currentUser = (JSON.stringify (req.user.displayName)).replace(/\"/g, "");
 	var content = req.body.twoteContent;
-	var user = req.session.username;
+	var user = (JSON.stringify (req.user.displayName)).replace(/\"/g, "");
 	if (!user) {
 		res.end();
 	}
@@ -107,7 +110,7 @@ twotes.add = function (req, res) {
 
 
 twotes.remove = function (req, res) {
-	var currentUser = req.session.username;
+	var currentUser = (JSON.stringify (req.user.displayName)).replace(/\"/g, "");
 
 	//find one with the time passed from twotes.js and remove it
 	var ID = req.body.ID;
