@@ -202,3 +202,17 @@ input:focus {
 	background-color: #ADD8E6;
 	font-weight: bold;
 }
+
+#fbLogin {
+	margin: auto;
+	width: auto;
+  	height: 46px;
+  	background: #E86C8D;
+  	font-family: inherit;
+  	font-weight: bold;
+  	color: inherit;
+  	letter-spacing: 1px;
+  	cursor: pointer;
+  	display:inline-block;
+  	vertical-align: text-top;
+}

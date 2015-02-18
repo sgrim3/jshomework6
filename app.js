@@ -86,7 +86,7 @@ app.get('/', ensureAuthenticated,twotes.list);
 //hidden ones for AJAX and forms and stuff
 app.post("/twotes/add", twotes.add);
 app.post("/twotes/delete", twotes.remove);
-app.post("/users/add", passport.authenticate('facebook'));
+app.get("/users/add", passport.authenticate('facebook'));
 app.post("/logout", users.logout);
 
 

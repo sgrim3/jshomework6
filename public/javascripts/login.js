@@ -26,3 +26,8 @@
 //     .done(onSuccess)
 //     .error(onError)
 // });
+
+$("#fbLogin").on("click",function(e) {
+  console.log(e);
+  window.location.href='/users/add'
+});
